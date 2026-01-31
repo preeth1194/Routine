@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "Intent"
+  },
+  "appBar": {
+    "greetingTemplate": "Hello, {{name}}",
+    "guest": "Guest",
+    "subtitle": "Keep Moving Today!"
+  },
+  "tabs": {
+    "home": "Home",
+    "dailyRoutine": "Daily Routine",
+    "journal": "Journal",
+    "insights": "Insights",
+    "profile": "Profile"
+  },
+  "screens": {
+    "home": "Home",
+    "dailyRoutine": "Daily Routine",
+    "journal": "Journal",
+    "insights": "Insights",
+    "profile": "Profile",
+    "settings": "Settings",
+    "modal": "Modal",
+    "notFound": {
+      "title": "Oops!",
+      "message": "This screen doesn't exist.",
+      "goHome": "Go to home screen!"
+    }
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel"
+  },
+  "settings": {
+    "account": "Account",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "preferences": "Preferences",
+    "appearance": "Appearance",
+    "reminders": "Reminders",
+    "support": "Support",
+    "help": "Help",
+    "about": "About"
+  }
+}
