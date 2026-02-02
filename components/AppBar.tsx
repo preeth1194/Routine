@@ -25,10 +25,9 @@ export function AppBar() {
   };
 
   return (
-    <View style={[appBarStyles.bar, { paddingTop: insets.top + 12 }]}>
+    <View style={[appBarStyles.bar, { paddingTop: insets.top + 6 }]}>
       <View style={appBarStyles.left}>
         <Text style={appBarStyles.greeting}>{greeting}</Text>
-        <Text style={appBarStyles.subtitle}>{subtitle}</Text>
       </View>
       <Pressable
         onPress={openDrawer}
@@ -36,7 +35,7 @@ export function AppBar() {
         accessibilityLabel={getLabel('screens.settings')}
         accessibilityRole="button"
       >
-        <Ionicons name="settings-outline" size={24} color={theme.appBarIconColor} />
+        <Ionicons name="settings-outline" size={22} color={theme.appBarIconColor} />
       </Pressable>
     </View>
   );

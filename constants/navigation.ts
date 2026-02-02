@@ -6,7 +6,7 @@ export const TAB_ICONS: Record<string, string> = {
   'daily-routine': 'calendar',
   journal: 'book',
   insights: 'stats-chart',
-  profile: 'person',
+  profile: 'heart',
 };
 
 /**
@@ -14,8 +14,8 @@ export const TAB_ICONS: Record<string, string> = {
  */
 export const TAB_LABEL_KEYS: Record<string, string> = {
   index: 'tabs.home',
-  'daily-routine': 'Routine',
+  'daily-routine': 'tabs.routine',
   journal: 'tabs.journal',
   insights: 'tabs.insights',
-  profile: 'tabs.profile',
+  profile: 'affirmations.title',
 };

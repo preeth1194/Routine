@@ -5,9 +5,9 @@ import { theme, typography } from '@/constants/theme';
 export const slidingPillTabBarStyles = StyleSheet.create({
   outer: {
     position: 'absolute',
-    bottom: 30,
-    left: 15,
-    right: 15,
+    bottom: 8,
+    left: 20,
+    right: 20,
     alignItems: 'center',
   },
   bar: {
@@ -24,7 +24,7 @@ export const slidingPillTabBarStyles = StyleSheet.create({
     overflow: 'hidden',
     shadowColor: theme.deepForest,
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.06,
     shadowRadius: 12,
     elevation: 4,
   },

@@ -85,8 +85,7 @@ export function SlidingPillTabBar({
       style={[
         styles.outer,
         {
-          paddingBottom: 0,
-          marginHorizontal: 0,
+          paddingBottom: safeInsets.bottom || 8,
         },
       ]}
       onLayout={handleBarLayout}

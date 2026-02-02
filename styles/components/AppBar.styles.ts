@@ -8,11 +8,11 @@ export const appBarStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingVertical: 12,
-    minHeight: 56,
-    backgroundColor: 'transparent',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    paddingVertical: 8,
+    minHeight: 44,
+    backgroundColor: theme.cardBackground,
+    borderBottomWidth: 1,
+    borderBottomColor: theme.cardBorder,
   },
   left: {
     flex: 1,
@@ -20,7 +20,7 @@ export const appBarStyles = StyleSheet.create({
   },
   greeting: {
     fontFamily: typography.heading,
-    fontSize: 20,
+    fontSize: 17,
     color: theme.appBarGreeting,
   },
   subtitle: {
@@ -50,12 +50,13 @@ export const appBarStyles = StyleSheet.create({
     gap: 8,
   },
   iconButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 36,
+    height: 36,
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 12,
+    backgroundColor: theme.backgroundSecondary,
   },
   iconButtonWithBadge: {
     position: 'relative',

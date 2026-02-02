@@ -42,6 +42,11 @@ export const theme = {
   appBarIconColor: '#2d3e1d',    // Same as accent/heading
   appBarIconBackground: '#ffffff',
   appBarNotificationBadge: '#e74c3c',
+
+  // Shadows - softer, modern elevation
+  cardShadowOpacity: 0.06,
+  cardShadowRadius: 16,
+  tabBarShadowOpacity: 0.06,
 } as const;
 /**
  * Typography - font families

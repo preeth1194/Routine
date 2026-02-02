@@ -10,9 +10,16 @@ import { tabScreenContainerStyles } from '@/styles/components/TabScreenContainer
 type TabScreenContainerProps = {
   children: React.ReactNode;
   style?: ViewStyle;
+  showAppBar?: boolean;
+  extendContentBehindTabBar?: boolean;
 };
 
-export function TabScreenContainer({ children, style }: TabScreenContainerProps) {
+export function TabScreenContainer({
+  children,
+  style,
+  showAppBar = true,
+  extendContentBehindTabBar = false,
+}: TabScreenContainerProps) {
   const tabBarHeight = useBottomTabBarHeight();
 
   return (
@@ -22,8 +29,13 @@ export function TabScreenContainer({ children, style }: TabScreenContainerProps)
         locations={[0, 0.5, 1]}
         style={StyleSheet.absoluteFill}
       />
-      <View style={[tabScreenContainerStyles.container, { paddingBottom: tabBarHeight + 16 }]}>
-        <AppBar />
+      <View
+        style={[
+          tabScreenContainerStyles.container,
+          { paddingBottom: extendContentBehindTabBar ? 0 : tabBarHeight + 16 },
+        ]}
+      >
+        {showAppBar && <AppBar />}
         <View style={[{ flex: 1 }, style]}>{children}</View>
       </View>
     </View>
