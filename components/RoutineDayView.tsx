@@ -274,7 +274,7 @@ export function RoutineDayView({
   const thumbScale = useSharedValue(1);
   const thumbOpacity = useSharedValue(0);
   const scrollViewRef = useRef<ScrollView>(null);
-  const scrollY = useSharedValue(0);
+  const scrollYRef = useRef(0);
   const selectionRef = useRef<{ startMinute: number; endMinute: number } | null>(null);
   const [selection, setSelection] = useState<{
     startMinute: number;
@@ -350,7 +350,8 @@ export function RoutineDayView({
   const timelineItems = buildTimelineItems(events);
 
   const updateSelectionFromPosition = useCallback(
-    (contentY: number, isStart: boolean) => {
+    (offsetInRow: number, touchY: number, isStart: boolean) => {
+      const contentY = offsetInRow + touchY + scrollYRef.current;
       const minute = getMinuteForPixelPosition(contentY, timelineItems);
       if (isStart) {
         selectionRef.current = { startMinute: minute, endMinute: minute };
@@ -633,7 +634,7 @@ export function RoutineDayView({
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
           onScroll={(e) => {
-            scrollY.value = e.nativeEvent.contentOffset.y;
+            scrollYRef.current = e.nativeEvent.contentOffset.y;
           }}
           scrollEventThrottle={16}
         >
@@ -775,13 +776,11 @@ export function RoutineDayView({
                     .minDistance(15)
                     .onStart((e) => {
                       'worklet';
-                      const contentY = prevOffset + e.y + scrollY.value;
-                      runOnJS(updateSelectionFromPosition)(contentY, true);
+                      runOnJS(updateSelectionFromPosition)(prevOffset, e.y, true);
                     })
                     .onUpdate((e) => {
                       'worklet';
-                      const contentY = prevOffset + e.y + scrollY.value;
-                      runOnJS(updateSelectionFromPosition)(contentY, false);
+                      runOnJS(updateSelectionFromPosition)(prevOffset, e.y, false);
                     })
                     .onEnd(() => {
                       'worklet';
